@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileCraft Dental & Implant Clinic | Advanced Laser Care</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfeff',
+                            100: '#cffafe',
+                            200: '#a5f3fc',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            700: '#0e7490',
+                            800: '#155e75',
+                            900: '#164e63',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Top Urgent Notice Bar -->
+    <div class="bg-gradient-to-r from-cyan-900 via-cyan-800 to-blue-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4 text-center sm:text-left">
+            <div class="flex items-center justify-center gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500 text-white animate-pulse">SPECIAL</span>
+                <span>✨ Free 3D Digital Intraoral Scan & Consultation for New Patients!</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-cyan-200">
+                <span class="hidden md:inline">🕒 Mon - Sat: 9:30 AM - 8:30 PM | Sun: 10 AM - 2 PM</span>
+                <a href="tel:+919876543210" class="hover:text-white font-semibold flex items-center gap-1"><i data-lucide="phone-call" class="w-3.5 h-3.5"></i> +91 98765 43210</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">SmileCraft<span class="text-cyan-600">.</span></span>
+                    <span class="block text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500">Dental & Implant Clinic</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Items -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#services" class="hover:text-cyan-600 transition-colors">Services</a>
+                <a href="#why-us" class="hover:text-cyan-600 transition-colors">Why Choose Us</a>
+                <a href="#results" class="hover:text-cyan-600 transition-colors">Smile Transformations</a>
+                <a href="#doctors" class="hover:text-cyan-600 transition-colors">Our Doctors</a>
+                <a href="#reviews" class="hover:text-cyan-600 transition-colors">Testimonials</a>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/919876543210?text=Hello%20SmileCraft%20Clinic,%20I%20would%20like%20to%20book%20a%20dental%20appointment." target="_blank" class="p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600"></i>
+                </a>
+                <button onclick="openModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-sm shadow-md shadow-cyan-600/25 hover:shadow-lg hover:shadow-cyan-600/40 hover:-translate-y-0.5 transition-all">
+                    Book Appointment
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3">
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-slate-700 font-semibold py-1">Services</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block text-slate-700 font-semibold py-1">Why Choose Us</a>
+            <a href="#results" onclick="toggleMobileMenu()" class="block text-slate-700 font-semibold py-1">Smile Transformations</a>
+            <a href="#doctors" onclick="toggleMobileMenu()" class="block text-slate-700 font-semibold py-1">Our Doctors</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block text-slate-700 font-semibold py-1">Testimonials</a>
+            <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-2 py-3 rounded-xl bg-cyan-600 text-white font-bold text-center">
+                Book Consultation Now
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:py-24 overflow-hidden bg-gradient-to-b from-cyan-50/60 via-white to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100/80 border border-cyan-200 text-cyan-800 text-xs sm:text-sm font-semibold">
+                        <span class="flex h-2 w-2 rounded-full bg-cyan-600 animate-ping"></span>
+                        Trusted by 10,000+ Happy Smiles
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                        Painless Laser Dentistry & <span class="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">Implant Specialists</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Say goodbye to dental fear. Experience computer-guided dental implants, invisible aligners, and instant smile makeovers in a sterile, ultra-modern environment.
+                    </p>
+
+                    <!-- Trust Stats Counter -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-2 pb-2 max-w-lg mx-auto lg:mx-0 border-y border-slate-200/80 py-4">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-700">15+</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-700">99.4%</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Implant Success</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-700">4.9 ★</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Google Rating</div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-base shadow-xl shadow-cyan-600/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Book Free 3D Scan
+                        </button>
+                        <a href="https://wa.me/919876543210?text=Hello%20Dr.%20Sharma,%20I%20want%20to%20consult%20regarding%20dental%20treatment." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-base shadow-sm hover:shadow transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="message-square" class="w-5 h-5 text-emerald-600"></i>
+                            Direct WhatsApp Chat
+                        </a>
+                    </div>
+
+                    <!-- Doctors & Certifications badges -->
+                    <div class="flex items-center justify-center lg:justify-start gap-3 text-xs text-slate-500 pt-2">
+                        <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> German Laser Tech</span>
+                        <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> 100% Painless RCT</span>
+                        <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> 0% EMI Option</span>
+                    </div>
+                </div>
+
+                <!-- Right Quick Booking Widget -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-slate-200/60 border border-slate-100 relative">
+                        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full shadow-md">
+                            Quick Appointment
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Book Your Dental Visit</h3>
+                        <p class="text-xs text-slate-500 mb-6">Confirmed within 15 minutes on WhatsApp / Call</p>
+
+                        <form id="heroBookingForm" onsubmit="handleHeroSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Patient Name</label>
+                                <input type="text" id="pName" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mobile Number (WhatsApp)</label>
+                                <input type="tel" id="pPhone" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Treatment Required</label>
+                                <select id="pTreatment" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm bg-white">
+                                    <option value="Dental Implants">Dental Implants (Permanent Teeth)</option>
+                                    <option value="Invisible Aligners">Clear Aligners / Invisible Braces</option>
+                                    <option value="Laser Teeth Whitening">Laser Teeth Whitening</option>
+                                    <option value="Root Canal Treatment">Painless Root Canal (RCT)</option>
+                                    <option value="Smile Makeover / Veneers">Cosmetic Smile Makeover</option>
+                                    <option value="Routine Dental Checkup">Routine Consultation & X-Ray</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Preferred Date</label>
+                                <input type="date" id="pDate" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-extrabold text-sm shadow-lg shadow-cyan-600/30 hover:opacity-95 transition-opacity">
+                                Confirm Appointment Now ➔
+                            </button>
+
+                            <p class="text-[11px] text-center text-slate-400">🔒 100% Private & Confidential. No spam calls.</p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100">Specialized Treatments</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Advanced Clinical Solutions Tailored for Every Smile</h2>
+                <p class="text-slate-600 text-base mt-3">From minor tooth restorations to complete jaw reconstructions, our precision digital tools guarantee painless, long-lasting outcomes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Immediate Dental Implants</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Replace missing teeth permanently in just 24 hours. Titanium and Zirconia implants backed with lifetime manufacturer guarantee.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> 3D Guided Flapless Procedure</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Natural chew & aesthetic match</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Dental Implants')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="smile" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Invisible Clear Aligners</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Straighten crooked teeth without painful wires or brackets. Custom 3D printed removable trays designed for active lifestyles.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Nearly 100% invisible to others</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Easy to clean, eat freely</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Invisible Aligners')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Single-Sitting Laser RCT</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Relieve toothache instantly with computerized rotary instrumentation and laser sterilization. Completed in only 40 minutes.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> 100% Painless with micro-anesthesia</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> CAD-CAM Zirconia ceramic crowns</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Laser Root Canal')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="sparkle" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Laser Teeth Whitening</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Remove stubborn stains from tea, coffee, and smoking. Achieve up to 8 shades brighter teeth in a single safe in-clinic session.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Zero enamel sensitivity formulation</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Results last up to 2 years</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Teeth Whitening')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cosmetic Smile Designing</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Ultra-thin porcelain veneers, composite bonding, and gum contouring to deliver red-carpet celebrity smile proportions.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Digital smile simulation preview</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Gap closure & chip corrections</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Smile Designing')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-xl hover:shadow-cyan-500/5 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <i data-lucide="heart-pulse" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pediatric & Family Care</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Gentle, anxiety-free dental appointments for kids and elderly parents. Preventive fluoride varnishes and cavity fillings.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Friendly child-first approach</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-600"></i> Comprehensive family dental packages</li>
+                    </ul>
+                    <a href="javascript:void(0)" onclick="openModalWith('Pediatric Care')" class="text-sm font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+                        Book Consultation <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Tech Features -->
+    <section id="why-us" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-950/80 px-3 py-1 rounded-full border border-cyan-800">Hospital-Grade Standards</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Setting The Benchmark In Clinical Safety & Comfort</h2>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        We have eliminated the cold, frightening clinical vibe. Every treatment room is acoustically insulated, sanitized using autoclave class-B sterilization, and equipped with ultra-HD monitors.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6 pt-4">
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                01
+                            </div>
+                            <h4 class="font-bold text-lg text-white">4-Tier Sterilization</h4>
+                            <p class="text-xs text-slate-400">Class B vacuum autoclave protocols following WHO dental infection control guidelines.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                02
+                            </div>
+                            <h4 class="font-bold text-lg text-white">Intraoral 3D Scans</h4>
+                            <p class="text-xs text-slate-400">No messy impressions. High-speed optical scanning for micron-perfect crown fitting.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                03
+                            </div>
+                            <h4 class="font-bold text-lg text-white">Zero Cost EMI</h4>
+                            <p class="text-xs text-slate-400">Flexible monthly repayment plans for implants and aligners starting at ₹1,999/mo.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                04
+                            </div>
+                            <h4 class="font-bold text-lg text-white">24/7 Dental Emergency</h4>
+                            <p class="text-xs text-slate-400">Dedicated on-call surgeon support for acute trauma, broken teeth, and severe pain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Feature Stats Box -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-800/60 p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-2xl space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                            <i data-lucide="activity" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-white">NABH Compliant</h4>
+                            <p class="text-xs text-slate-400">Certified for Medical Excellence & Cleanliness</p>
+                        </div>
+                    </div>
+                    <hr class="border-slate-700">
+                    <blockquote class="text-sm text-slate-300 italic leading-relaxed">
+                        "Our mission is simple: To provide dentistry so gentle, precise, and transparent that you never hesitate to smile or visit a clinic again."
+                    </blockquote>
+                    <div class="flex items-center justify-between pt-2">
+                        <div>
+                            <div class="font-bold text-white text-sm">Dr. Amit Sharma</div>
+                            <div class="text-xs text-cyan-400 font-semibold">Chief Dental Surgeon & Implantologist</div>
+                        </div>
+                        <button onclick="openModal()" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                            Meet The Team
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations / Before & After Section -->
+    <section id="results" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600 bg-cyan-100 px-3 py-1 rounded-full">Real Transformations</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Smiles Crafted to Perfection</h2>
+                <p class="text-slate-600 text-base mt-2">See how our dental team restored self-confidence and chewing power for real patients.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-100 space-y-4">
+                    <div class="aspect-video bg-gradient-to-r from-slate-200 to-slate-300 rounded-2xl flex items-center justify-center text-slate-500 font-bold text-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-slate-800/40 flex items-center justify-center text-white text-center p-4">
+                            <span class="text-sm font-extrabold tracking-wide">Complete Full-Mouth Implants (All-on-4)</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-cyan-600 uppercase">Case #1042</span>
+                        <h4 class="text-lg font-bold text-slate-900">Full Jaw Fixed Teeth in 3 Days</h4>
+                        <p class="text-xs text-slate-500">Patient was struggling with loose dentures for 8 years. Restored permanent fixed zirconia arches.</p>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs text-slate-600 font-semibold border-t border-slate-100">
+                        <span>Duration: 72 Hours</span>
+                        <span class="text-emerald-600">Verified Result ✓</span>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-100 space-y-4">
+                    <div class="aspect-video bg-gradient-to-r from-cyan-200 to-blue-200 rounded-2xl flex items-center justify-center text-slate-500 font-bold text-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-slate-800/40 flex items-center justify-center text-white text-center p-4">
+                            <span class="text-sm font-extrabold tracking-wide">Clear Aligner Gap Closure</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-cyan-600 uppercase">Case #892</span>
+                        <h4 class="text-lg font-bold text-slate-900">Front Teeth Spacing Correction</h4>
+                        <p class="text-xs text-slate-500">24-year-old student with severe midline gap. Straightened discreetly without metal braces.</p>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs text-slate-600 font-semibold border-t border-slate-100">
+                        <span>Duration: 7 Months</span>
+                        <span class="text-emerald-600">Verified Result ✓</span>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-100 space-y-4">
+                    <div class="aspect-video bg-gradient-to-r from-emerald-100 to-teal-200 rounded-2xl flex items-center justify-center text-slate-500 font-bold text-sm relative overflow-hidden">
+                        <div class="absolute inset-0 bg-slate-800/40 flex items-center justify-center text-white text-center p-4">
+                            <span class="text-sm font-extrabold tracking-wide">Bridal Laser Whitening & Veneers</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-cyan-600 uppercase">Case #1150</span>
+                        <h4 class="text-lg font-bold text-slate-900">Complete Wedding Smile Makeover</h4>
+                        <p class="text-xs text-slate-500">Corrected discolored fluorosis enamel and chipped incisors with ultra-thin E-max porcelain veneers.</p>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center text-xs text-slate-600 font-semibold border-t border-slate-100">
+                        <span>Duration: 2 Visits</span>
+                        <span class="text-emerald-600">Verified Result ✓</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600 bg-cyan-100 px-3 py-1 rounded-full">Specialist Faculty</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Led by Certified Master Dentists</h2>
+                <p class="text-slate-600 text-base mt-2">Internationally trained in Germany and the USA, committed to clinical integrity.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+                    <div class="w-24 h-24 rounded-2xl bg-cyan-200 text-cyan-800 flex items-center justify-center font-extrabold text-3xl shrink-0">
+                        DA
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Dr. Amit Sharma</h3>
+                        <p class="text-xs font-semibold text-cyan-700 uppercase tracking-wider mb-2">BDS, MDS (Prosthodontist & Implantologist)</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Fellow of the International Congress of Oral Implantologists (USA). Over 3,500 successful implant placements with 99.4% survival rate.
+                        </p>
+                        <button onclick="openModalWith('Dr. Amit Sharma Consultation')" class="text-xs font-bold text-slate-900 hover:text-cyan-600 flex items-center gap-1 mx-auto sm:mx-0">
+                            Book with Dr. Amit <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+                    <div class="w-24 h-24 rounded-2xl bg-blue-200 text-blue-800 flex items-center justify-center font-extrabold text-3xl shrink-0">
+                        DP
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Dr. Priya Verma</h3>
+                        <p class="text-xs font-semibold text-cyan-700 uppercase tracking-wider mb-2">BDS, MDS (Orthodontics & Dentofacial Orthopedics)</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Certified Diamond Invisalign Provider with 12+ years of experience crafting harmonious facial aesthetics and clear aligner plans.
+                        </p>
+                        <button onclick="openModalWith('Dr. Priya Verma Consultation')" class="text-xs font-bold text-slate-900 hover:text-cyan-600 flex items-center gap-1 mx-auto sm:mx-0">
+                            Book with Dr. Priya <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Reviews Section -->
+    <section id="reviews" class="py-20 bg-cyan-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-800">Verified Patient Feedback</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">What Our Patients Say</h2>
+                <p class="text-cyan-200 text-base mt-2">Rated 4.9/5 stars across 500+ Google Reviews.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-cyan-950/60 p-8 rounded-3xl border border-cyan-800/60 space-y-4">
+                    <div class="flex text-amber-400">★★★★★</div>
+                    <p class="text-sm text-cyan-100 italic leading-relaxed">
+                        "I was terrified of getting a root canal due to previous bad experiences. Dr. Sharma did it with zero pain! Truly painless laser treatment. Highly recommended."
+                    </p>
+                    <div class="pt-2 border-t border-cyan-800/40">
+                        <div class="font-bold text-sm text-white">Sanjay Mehra</div>
+                        <div class="text-xs text-cyan-300">Dental Implant & RCT Patient</div>
+                    </div>
+                </div>
+
+                <div class="bg-cyan-950/60 p-8 rounded-3xl border border-cyan-800/60 space-y-4">
+                    <div class="flex text-amber-400">★★★★★</div>
+                    <p class="text-sm text-cyan-100 italic leading-relaxed">
+                        "Got my clear aligners from Dr. Priya Verma. My teeth are completely aligned within 6 months! Staff is super polite and clinic hygiene is world-class."
+                    </p>
+                    <div class="pt-2 border-t border-cyan-800/40">
+                        <div class="font-bold text-sm text-white">Ananya Rathore</div>
+                        <div class="text-xs text-cyan-300">Invisalign Aligner Patient</div>
+                    </div>
+                </div>
+
+                <div class="bg-cyan-950/60 p-8 rounded-3xl border border-cyan-800/60 space-y-4">
+                    <div class="flex text-amber-400">★★★★★</div>
+                    <p class="text-sm text-cyan-100 italic leading-relaxed">
+                        "Very transparent pricing. No hidden fees or unnecessary tests suggested. Best dental clinic in the city with state-of-the-art machines."
+                    </p>
+                    <div class="pt-2 border-t border-cyan-800/40">
+                        <div class="font-bold text-sm text-white">Vikram Malhotra</div>
+                        <div class="text-xs text-cyan-300">Family Dental Care</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Location & Contact Info -->
+    <section class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Visit Our Clinic</h4>
+                        <p class="text-xs text-slate-600 mt-1">Plot 45, Main Ring Road, Near Metro Pillar 128, Central Market, Jaipur / Delhi NCR</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Working Hours</h4>
+                        <p class="text-xs text-slate-600 mt-1">Monday - Saturday: 9:30 AM - 8:30 PM<br>Sunday: 10:00 AM - 2:00 PM (Prior Appointment)</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Emergency Call & WhatsApp</h4>
+                        <p class="text-xs text-slate-600 mt-1">Helpline: +91 98765 43210<br>Email: care@smilecraftdental.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <span class="text-white font-bold text-base">SmileCraft Dental Clinic</span>
+                <p class="text-slate-500 mt-1">© 2026 SmileCraft Care Pvt. Ltd. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-slate-400">
+                <a href="#services" class="hover:text-white">Services</a>
+                <a href="#why-us" class="hover:text-white">Sterilization</a>
+                <a href="#doctors" class="hover:text-white">Doctors</a>
+                <a href="javascript:void(0)" onclick="openModal()" class="hover:text-white">Book Online</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA Bar -->
+    <div class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2.5 px-4 flex items-center justify-between gap-3 sm:hidden z-50 shadow-2xl">
+        <a href="tel:+919876543210" class="flex-1 py-3 rounded-xl bg-slate-100 text-slate-900 font-bold text-xs flex items-center justify-center gap-2">
+            <i data-lucide="phone-call" class="w-4 h-4 text-cyan-700"></i>
+            Call Clinic
+        </a>
+        <a href="https://wa.me/919876543210?text=Hello%20SmileCraft%20Dental,%20I%20want%20to%20book%20an%20appointment." target="_blank" class="flex-1 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-emerald-600/30">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-600 mx-auto flex items-center justify-center mb-3">
+                    <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Book Priority Appointment</h3>
+                <p class="text-xs text-slate-500 mt-1">Zero wait time. Consultation confirmed on WhatsApp.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name</label>
+                    <input type="text" id="mName" required placeholder="Enter full name" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Mobile Number</label>
+                    <input type="tel" id="mPhone" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Treatment Requested</label>
+                    <input type="text" id="mTreatment" placeholder="e.g. Dental Implants, RCT, Aligners" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm shadow-lg shadow-cyan-600/30 transition-all">
+                    Send Request to WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Interactions -->
+    <script>
+        lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function openModalWith(treatment) {
+            document.getElementById('mTreatment').value = treatment;
+            openModal();
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function handleHeroSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('pName').value;
+            const phone = document.getElementById('pPhone').value;
+            const treatment = document.getElementById('pTreatment').value;
+            const date = document.getElementById('pDate').value || 'Earliest available';
+            
+            const msg = `Hello SmileCraft Dental Clinic, I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nTreatment: ${treatment}\nPreferred Date: ${date}`;
+            const url = `https://wa.me/919876543210?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('mName').value;
+            const phone = document.getElementById('mPhone').value;
+            const treatment = document.getElementById('mTreatment').value || 'General Consultation';
+            
+            const msg = `Hello SmileCraft Dental Clinic, I want to book an appointment.\nName: ${name}\nPhone: ${phone}\nTreatment: ${treatment}`;
+            const url = `https://wa.me/919876543210?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
